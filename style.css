@@ -1,0 +1,164 @@
+body{
+    margin-left: auto;
+    margin-right: auto;
+    background-color:rgb(255, 255, 255);    
+    font-family:'Raleway';
+    background-color: none;
+}
+.namePage{
+    text-align: center;
+    border: dashed;
+    border-width: 12px;
+    border-color:yellow;
+    padding: 0px;
+    margin: 0px;
+    background-image: url("images/sewing.jpg");
+    background-repeat:round;
+    opacity: 1;
+}
+.namePageBound{
+  border: 12px solid gold;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.namePageInside{
+  border: 12px solid gold;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+.contact{
+    /* background-color: white; */
+    /* float: right; */
+    padding: 0.5em;
+    color: white;
+    background-color: goldenrod;
+    background: linear-gradient(to right, yellow, goldenrod, yellow);
+
+}
+#headerName{
+    font-size: 5em; 
+    color: blue;
+    background: linear-gradient(to right,rgb(255, 0, 0) , rgb(255, 94, 0), rgb(255, 217, 0));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    text-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+@keyframes gradientHeaderName {
+  
+}
+
+#phone{
+    width: 6em;
+    position: fixed;
+    right: 10px;
+    margin-top: 1em;
+    transition: ease-out;
+    animation: phoneRing 1s infinite;
+    cursor: pointer;
+    z-index: 5;
+}
+@keyframes phoneRing{
+    0%{transform: rotate(-20deg);}
+    50%{transform: rotate(20deg);}
+    100%{transform: rotate(-20deg);}
+}
+.ggMap{
+    display: flex;
+    justify-content: center;
+}
+footer{
+    box-sizing: border-box;
+    padding: 2em;
+    margin-top: 2em;
+    color: white;
+    background-color: #5170FF;
+}
+#customOrder{
+    width: 10em;
+    background: linear-gradient(to top left,rgb(68, 163, 252),rgb(74, 243, 187));
+    font-size: large;
+    color: white;
+    border: 0px;
+    border-radius: 2px;
+    padding: 0.5em;
+    margin: 1em;
+    cursor: pointer;
+    transition: 1s;
+}
+#customOrder:hover{
+  width: 10em;
+  background: linear-gradient(to bottom right,rgb(68, 163, 252),rgb(74, 243, 187));
+  font-size: large; 
+  color: rgb(255, 255, 255);
+  border: 0px;
+  border-radius: 2px;
+  padding: 0.5em;
+  margin: 1em;
+  cursor: pointer;
+  transition: 1s;
+}
+/* .gradient-border {
+    --borderWidth: 3px;
+    background: #1D1F20;
+    position: relative;
+    border-radius: var(--borderWidth);
+  }
+  .gradient-border:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+  }
+  
+  
+  @keyframes animatedgradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  } */
+#boxSchedule{
+    position: fixed;
+    display: block;
+    bottom: 0px;
+    right: 0px;
+    box-sizing: border-box;
+    padding: 1em;
+}
+
+
+#collapseSchedule{
+    position: fixed;
+    display: block;
+    bottom: 150px;
+    right: 0px;
+    height: 50px;
+    width: 5px;
+    background-color: rgb(85, 241, 189);
+    color: white;
+    cursor: pointer;    
+}
+
+#txtSetSchedule{
+    color: #002fff; 
+    text-align: center;
+    background: linear-gradient(to right,rgb(2, 155, 104), aqua,rgb(0, 132, 255));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
