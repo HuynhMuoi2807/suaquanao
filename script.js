@@ -1,11 +1,11 @@
-var myStorage = window.localStorage, pageCount;
+var mySession = window.sessionStorage, pageCount;
 window.addEventListener('load', function(){
-   if(!myStorage.getItem("pageCount")){
-      myStorage.setItem('pageCount', 1);
+   if(!mySession.getItem("pageCount")){
+      mySession.setItem('pageCount', 1);
    } else {
-      pageCount = myStorage.getItem("pageCount");
+      pageCount = mySession.getItem("pageCount");
       pageCount = pageCount + 1;
-      myStorage.setItem('pageCount', pageCount );
+      mySession.setItem('pageCount', pageCount );
    }
-   console.log('Số lượt khách hàng ghé thăm trang ', myStorage.getItem("pageCount"));
+   console.log('Số lượt khách hàng ghé thăm trang ', mySession.getItem("pageCount"));
 });
