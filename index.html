@@ -14,6 +14,7 @@
         <title>Huynh Muội | Sửa quần áo</title>  
         <script type="text/javascript" src="script.js"></script>
         <link rel="stylesheet" href="style.css">
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
         <link rel = "icon" href ="images/nganh_quan_tri_kinh_doanh_la_gi_1_qUZ_icon.ico"   type = "image/x-icon">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
         <script>
@@ -56,6 +57,17 @@
               });
               return false;
             }
+            function toggleHiddenSchedule(){
+                var tmp = document.getElementById('collapseSchedule').value;
+                if (tmp == 1){
+                    document.getElementById('boxSchedule').style.visibility = "hidden";
+                    document.getElementById('collapseSchedule').value = 0;
+                }
+                else{
+                    document.getElementById('boxSchedule').style.visibility = "visible";
+                    document.getElementById('collapseSchedule').value = 1;
+                }
+            }
         </script>
         <style>
             input[type="radio"] {
@@ -71,16 +83,16 @@
                 border-radius: 50%;
                 border-style: solid;
                 border-width: 0.1rem;
-                border-color: rgb(122, 106, 122);
+                border-color: rgb(68, 255, 152);
             }
             input[type="radio"]:checked + *::before {
-                background: radial-gradient(rgb(2, 155, 104) 0%, rgb(2, 155, 104) 40%, transparent 50%, transparent);
-                border-color: rgb(2, 155, 104);
+                background: radial-gradient(rgb(95, 255, 202) 0%, rgb(95, 255, 202)40%, transparent 50%, transparent);
+                border-color: rgb(95, 255, 202);
             }
             input[type="radio"]:checked + * {
                 font-style: oblique;
                 transition: 1s;
-                color: rgb(2, 155, 104);
+                color: rgb(95, 255, 202);
             }
         </style>
     </head>
@@ -102,48 +114,47 @@
             </div>
         </div>       
         <img src="images/phone.png" id="phone" onclick="window.open('tel:0368673777');">
-        <script>
-            var fixmeTop = $('#phone').offset().top;
-            $(window).scroll(function() {
-                var currentScroll = $(window).scrollTop();                
-                if (currentScroll <= fixmeTop) {
-                    document.getElementById('phone').style.top =`${fixmeTop - currentScroll}px`;
-                } else {                                   // apply position: static
-                    $('#phone').css({                      // if you scroll above it
-                        position: 'fixed',
-                        top: '0',
-                        right: '10',
-                    });
-                }
-
-            });
-            console.log($('#schedule').serialize());
-        </script>
-        <div class="ggMap">
-            <iframe width="600" height="450"  allowfullscreen="" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1852.2566496237969!2d106.38193092262628!3d10.35826457645897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310aafdfd8b66d53%3A0xc97ac7888bffe55!2zSHV5bmggTXXhu5lpIC0gU-G7rWEgxJHhu5Mgc2luaCB2acOqbg!5e0!3m2!1sen!2s!4v1639244086780!5m2!1sen!2s" ></iframe>
-        </div>
         
-        <div id="boxSchedule">
-            <form id="schedule" onsubmit="postToGoogle()">
-                <h1  id="txtSetSchedule">Đặt lịch hẹn</h1>
-                <script>
-                    for (let i = 0; i < 7 ;i++){
-                        document.write('<input type="radio" name="entry.679890808" id= "day'+i+'" value = "'+day[i]+'" required>');
-                        document.write('<label for="day'+i+'">'+day[i]+'</label><br>');
-                    }
+        <div class="container">
+            <div class="col">
+                <div class="ggMap">
+                    <iframe width="" style="width: 100%;" height="450"  allowfullscreen="" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1852.2566496237969!2d106.38193092262628!3d10.35826457645897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310aafdfd8b66d53%3A0xc97ac7888bffe55!2zSHV5bmggTXXhu5lpIC0gU-G7rWEgxJHhu5Mgc2luaCB2acOqbg!5e0!3m2!1sen!2s!4v1639244086780!5m2!1sen!2s" ></iframe>
+                    <!-- <h1>Địa chỉ trực tiếp từ Google Map</h1><br> -->
+                </div>
+                <!-- <iframe width="" height="450"  allowfullscreen="" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1852.2566496237969!2d106.38193092262628!3d10.35826457645897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310aafdfd8b66d53%3A0xc97ac7888bffe55!2zSHV5bmggTXXhu5lpIC0gU-G7rWEgxJHhu5Mgc2luaCB2acOqbg!5e0!3m2!1sen!2s!4v1639244086780!5m2!1sen!2s" ></iframe>
+                <iframe width="" height="450"  allowfullscreen="" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1852.2566496237969!2d106.38193092262628!3d10.35826457645897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310aafdfd8b66d53%3A0xc97ac7888bffe55!2zSHV5bmggTXXhu5lpIC0gU-G7rWEgxJHhu5Mgc2luaCB2acOqbg!5e0!3m2!1sen!2s!4v1639244086780!5m2!1sen!2s" ></iframe>
+                <iframe width="" height="450"  allowfullscreen="" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1852.2566496237969!2d106.38193092262628!3d10.35826457645897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310aafdfd8b66d53%3A0xc97ac7888bffe55!2zSHV5bmggTXXhu5lpIC0gU-G7rWEgxJHhu5Mgc2luaCB2acOqbg!5e0!3m2!1sen!2s!4v1639244086780!5m2!1sen!2s" ></iframe> -->
+
+            </div>
+            <div class=" col">
+                <!-- <button id="collapseSchedule" onclick="toggleHiddenSchedule()" value="1">|</button> -->
+                <div id="boxSchedule" class="gradient-border">
+                    <form id="schedule" onsubmit="postToGoogle()">
+                        <h1  id="txtSetSchedule">Đặt lịch hẹn</h1>
+                        <script>
+                            for (let i = 0; i < 7 ;i++){
+                                document.write('<input type="radio" name="entry.679890808" id= "day'+i+'" value = "'+day[i]+'" required>');
+                                document.write('<label for="day'+i+'">'+day[i]+'</label><br>');
+                            }
+                            
+                        </script>
+                        <label>Số điện thoại</label>
+                        <input type="number" value="" id="customPhone" name="entry.152126049" style="margin-left: auto; margin-right: auto; display: flex; margin-top: 0.5em; border: 1px solid #002fff;" required><br>
+        
+                        <label>Nội dung yêu cầu</label>
+                        <textarea rows="4" cols="25" style="margin-left: auto; margin-right: auto; display: flex; margin-top: 0.5em; border: 1px solid #002fff; resize: none;" name="entry.1947973158" id="customComment" form="schedule" placeholder="Yêu cầu của bạn là..." required></textarea>
+                        <br>
+                        <input type="submit" id="customOrder" value="Đặt lịch hẹn" >
+
+                    </form>
                     
-                </script>
-                <label>Số điện thoại</label>
-                <input type="number" value="" id="customPhone" name="entry.152126049" style="margin-left: auto; margin-right: auto; display: flex; margin-top: 0.5em; border: 1px solid #002fff;" required><br>
-
-                <label>Nội dung yêu cầu</label>
-                <textarea rows="4" cols="25" style="margin-left: auto; margin-right: auto; display: flex; margin-top: 0.5em; border: 1px solid #002fff; resize: none;" name="entry.1947973158" id="customComment" form="schedule" placeholder="Yêu cầu của bạn là..." required></textarea>
-                <br>
-                <input type="submit" id="customOrder" value="Đặt lịch hẹn" >
-
-            </form>
-            
+                </div>
         </div>
+        </div>
+
+        
+        
+        
         <script>
             $('#customOrder').hover(
                 function(){
@@ -156,25 +167,38 @@
                     }
                 }
             );
+            var fixmeTop = $('#phone').offset().top;
+            var fixScheduleTop = $('#schedule').offset().top;
+            $(window).scroll(function() {
+                var currentScroll = $(window).scrollTop();                
+                if (currentScroll <= fixmeTop) {
+                    document.getElementById('phone').style.top =`${fixmeTop - currentScroll}px`;
+                } else {                                   // apply position: static
+                    $('#phone').css({                      // if you scroll above it
+                        position: 'fixed',
+                        top: '0',
+                        right: '10',
+                    });                   
+                }
+                // if (currentScroll <= fixScheduleTop){
+                //     document.getElementById('schedule').style.top =`${fixScheduleTop - currentScroll}px`;
+                    
+                // }
+                // else{
+                //     $('#schedule').css({
+                //         position: 'fixed',
+                //         top: '0',
+                //         right: '10',
+                //     })
+                // }
 
-            function toggleHiddenSchedule(){
-                var tmp = document.getElementById('collapseSchedule').value;
-                if (tmp == 1){
-                    document.getElementById('boxSchedule').style.visibility = "hidden";
-                    document.getElementById('collapseSchedule').value = 0;
-                }
-                else{
-                    document.getElementById('boxSchedule').style.visibility = "visible";
-                    document.getElementById('collapseSchedule').value = 1;
-                }
-            }
+            });
+            // console.log($('#schedule').serialize());
         </script>
-
-        <button id="collapseSchedule" onclick="toggleHiddenSchedule()" value="1">|</button>
         <footer>
-            <h3 style="text-align: left;">Số điện thoại liên lạc: 0368673777 (Viettel)</h3> 
-            <h3 style="text-align: left;">Địa chỉ liên lạc: phường 9, TP Mỹ Tho, tỉnh Tiền Giang (gần trường Cao đẳng Y tế)</h3>
-            <h2 style="text-align: center;">Xin cảm ơn Quý khách</h2>
+            <p style="text-align: left;">Số điện thoại liên lạc: 0368673777 (Viettel)</p> 
+            <p style="text-align: left;">Địa chỉ liên lạc: phường 9, TP Mỹ Tho, tỉnh Tiền Giang (gần trường Cao đẳng Y tế)</p>
+            <p style="text-align: center;">Xin cảm ơn Quý khách</p>
         </footer>
     </body>
 </html>

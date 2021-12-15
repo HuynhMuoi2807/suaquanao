@@ -1,3 +1,12 @@
+:root {
+  --green4:rgb(49, 133, 91);
+  --green3:rgba(49, 133, 91, 0.5);
+  --green3_1: rgb(2, 155, 104);
+  --green2: rgb(135, 252, 213);
+  --green2_1: rgb(135, 252, 213, 0.5);
+  --green1: rgb(202, 250, 234);
+  --blue2: rgb(68, 163, 252);
+}
 body{
     margin-left: auto;
     margin-right: auto;
@@ -9,7 +18,7 @@ body{
     text-align: center;
     border: dashed;
     border-width: 12px;
-    border-color:yellow;
+    border-color:var(--green2_1);
     padding: 0px;
     margin: 0px;
     background-image: url("images/sewing.jpg");
@@ -17,14 +26,15 @@ body{
     opacity: 1;
 }
 .namePageBound{
-  border: 12px solid gold;
+  border: 12px solid var(--green3);
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
+  display: block;
 }
 
 .namePageInside{
-  border: 12px solid gold;
+  border: 12px solid var(--green3);
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
@@ -35,17 +45,15 @@ body{
     padding: 0.5em;
     color: white;
     background-color: goldenrod;
-    background: linear-gradient(to right, yellow, goldenrod, yellow);
+    background: linear-gradient(to right, var(--green2), var(--green3), var(--green2));
 
 }
-#headerName{
-    font-size: 5em; 
-    color: blue;
-    background: linear-gradient(to right,rgb(255, 0, 0) , rgb(255, 94, 0), rgb(255, 217, 0));
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    text-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+@media screen and (max-width: 1100px) {
+  /* css goes here */
+  
 }
+
 
 @keyframes gradientHeaderName {
   
@@ -66,40 +74,37 @@ body{
     50%{transform: rotate(20deg);}
     100%{transform: rotate(-20deg);}
 }
-.ggMap{
-    display: flex;
-    justify-content: center;
-}
-footer{
-    box-sizing: border-box;
-    padding: 2em;
-    margin-top: 2em;
-    color: white;
-    background-color: #5170FF;
-}
+
+
 #customOrder{
     width: 10em;
-    background: linear-gradient(to top left,rgb(68, 163, 252),rgb(74, 243, 187));
+    background: linear-gradient(to top left,var(--blue2),rgb(74, 243, 187));
     font-size: large;
     color: white;
     border: 0px;
     border-radius: 2px;
     padding: 0.5em;
-    margin: 1em;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
     cursor: pointer;
     transition: 1s;
+    justify-content: center;
 }
 #customOrder:hover{
   width: 10em;
-  background: linear-gradient(to bottom right,rgb(68, 163, 252),rgb(74, 243, 187));
+  background: linear-gradient(to bottom right,var(--blue2),rgb(74, 243, 187));
   font-size: large; 
   color: rgb(255, 255, 255);
   border: 0px;
   border-radius: 2px;
   padding: 0.5em;
-  margin: 1em;
   cursor: pointer;
   transition: 1s;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
 }
 /* .gradient-border {
     --borderWidth: 3px;
@@ -133,21 +138,15 @@ footer{
       background-position: 0% 50%;
     }
   } */
-#boxSchedule{
-    position: fixed;
-    display: block;
-    bottom: 0px;
-    right: 0px;
-    box-sizing: border-box;
-    padding: 1em;
-}
-
 
 #collapseSchedule{
-    position: fixed;
+    /* position: fixed;
     display: block;
     bottom: 150px;
+    right: 0px; */
+    position: absolute;
     right: 0px;
+    top: inherit;
     height: 50px;
     width: 5px;
     background-color: rgb(85, 241, 189);
@@ -158,7 +157,92 @@ footer{
 #txtSetSchedule{
     color: #002fff; 
     text-align: center;
-    background: linear-gradient(to right,rgb(2, 155, 104), aqua,rgb(0, 132, 255));
+    background: linear-gradient(to right,rgb(2, 155, 104), aqua,var(--blue2));
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
+#boxSchedule{
+  width: max-content;
+  color: white;
+  
+}
+.ggMap{
+  padding: 2em;
+  display: flex;
+  justify-content: center;
+}
+/* // `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { 
+  .container{
+    display: flex;
+    flex-direction: column;
+  }
+  .container .col:nth-child(1){
+    display: block;
+    width: 100%;
+    float: left;
+    background-color: var(--green2);
+  }
+  .container .col:nth-child(2){
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    padding: 1em;
+    background-color: var(--green4);
+  }
+  footer{
+    box-sizing: border-box;
+    padding: 2em;
+    margin-top: 2em;
+    color: white;
+    background-color: var(--green3_1);
+  }
+  #headerName{
+    font-size: 3em;
+    background: linear-gradient(to right,var(--green1), var(--green2));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    text-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+}
+
+
+/* // `xxl` applies to x-large devices (large desktops, less than 1400px) */
+@media (min-width: 575.98px) { 
+  .container{
+    display: flex;
+    flex-direction: row;
+  }
+  .container .col:nth-child(1){
+    display: block;
+    width: 70%;
+    float: left;
+    background-color: var(--green2);
+  }
+  .container .col:nth-child(2){    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    padding: 1em;
+    background-color: var(--green4);
+  }
+  footer{
+    box-sizing: border-box;
+    padding: 2em;
+    margin-top: 2em;
+    font-size: x-large;
+    color: white;
+    background-color: var(--green3_1);
+  }
+  #headerName{
+    font-size: 5em;
+    background: linear-gradient(to right,var(--green1), var(--green2));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    text-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+}
+
+
